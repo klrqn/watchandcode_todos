@@ -27,7 +27,8 @@ function addTodo(todo) {
 
 addTodo(6);
 
-function changeTodo(oldTodo, newTodo) {
+// this is mine
+function mychangeTodo(oldTodo, newTodo) {
 	for (var i=0; i<listOfTodos.length; i++) {
 		if (listOfTodos[i] == oldTodo) {
 			listOfTodos[i] = newTodo;
@@ -36,4 +37,12 @@ function changeTodo(oldTodo, newTodo) {
 	displayTodos();
 }
 
-changeTodo(6, 7);
+mychangeTodo(6, 7);
+
+// this is from the walkthrough
+function changeTodo(index, val) {
+	listOfTodos[index] = val;
+	displayTodos();
+}
+
+changeTodo(2, 100);
