@@ -46,3 +46,11 @@ function changeTodo(index, val) {
 }
 
 changeTodo(2, 100);
+
+function deleteTodo(index) {
+	console.log(`executing deleteTodo(${index})`);
+	listOfTodos.splice(index, 1);
+	displayTodos();
+}
+
+deleteTodo(2);
