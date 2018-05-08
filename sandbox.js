@@ -82,3 +82,41 @@ var todoList = {
     this.display();
   }
 };
+
+// Version 4
+
+// version 3
+// Code goes here
+
+// stores todo array on an object.
+var todoList = {
+  todos: [],
+
+  // display todolist
+  display: function() {
+    console.log(this.todos);
+  },
+
+  add: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.display();
+  },
+
+  change: function(position, todoText) {
+    this.todos[position].todoText = todoText;
+    this.display();
+  },
+
+  delete: function(position) {
+    this.todos.splice(position, 1);
+    this.display();
+  },
+
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+  }
+};
