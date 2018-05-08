@@ -54,3 +54,31 @@ function deleteTodo(index) {
 }
 
 deleteTodo(2);
+
+// version 3
+// Code goes here
+
+// stores todo array on an object.
+var todoList = {
+  todos: [1, 2, 3, 4, 5],
+
+  // display todolist
+  display: function() {
+    console.log(this.todos);
+  },
+
+  add: function(todo) {
+    this.todos.push(todo);
+    this.display();
+  },
+
+  change: function(position, newvalue) {
+    this.todos[position] = newvalue;
+    this.display();
+  },
+
+  delete: function(position) {
+    this.todos.splice(position, 1);
+    this.display();
+  }
+};
