@@ -120,3 +120,52 @@ var todoList = {
     todo.completed = !todo.completed;
   }
 };
+
+//v5
+
+// version 3
+// Code goes here
+
+// stores todo array on an object.
+var todoList = {
+  todos: [],
+
+  // display todolist
+  display: function() {
+    if (this.todos.length === 0) {
+      return 'you have no todos!';
+    } else {
+      for (var i=0; i<this.todos.length; i++) {
+        if (this.todos[i].completed === true) {
+          console.log(`(x) Todo #${i}: ${this.todos[i].todoText}`);
+        } else {
+          console.log(`( ) Todo #${i}: ${this.todos[i].todoText}`);
+        }
+      }
+    }
+  },
+
+  add: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.display();
+  },
+
+  change: function(position, todoText) {
+    this.todos[position].todoText = todoText;
+    this.display();
+  },
+
+  delete: function(position) {
+    this.todos.splice(position, 1);
+    this.display();
+  },
+
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+  }
+};
+
